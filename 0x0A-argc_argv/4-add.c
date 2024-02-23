@@ -2,11 +2,13 @@
 #include <stdlib.h>
 
 /**
- * main - it all starts here
+ * main - it all starts here.
  * @argc: the number of arguments
  * @argv: array of pointer to arguments
+ *
  * Return Always 0.
 */
+
 int main(int argc, char *argv[])
 {
 	int sum = 0;
