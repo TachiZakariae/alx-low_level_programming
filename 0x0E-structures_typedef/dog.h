@@ -4,7 +4,7 @@
 /**
  * struct dog - a struct
  * @name: dog's name
- * @arg: dog's age
+ * @age: dog's age
  * @owner: owner's name
  *
  * Description: just a lone dog struct i a big kitty world
@@ -12,7 +12,8 @@
 struct dog
 {
 	char *name;
-	float arg;
+	float age;
 	char *owner;
 };
+
 #endif
