@@ -7,7 +7,7 @@
  */
 int get_endianness(void)
 {
-	unsigned lomg int n = 1;
+	unsigned long int n = 1;
 
 	return (*(char *)&n);
 }
