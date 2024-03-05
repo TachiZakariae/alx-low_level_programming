@@ -52,7 +52,7 @@ void format_string(char *separator, va_list ap)
  */
 void print_all(const char * const format, ...)
 {
-	| int i = 0, j;
+	int i = 0, j;
 	char *separator = "";
 	va_list ap;
 	token_t tokens[] = {
