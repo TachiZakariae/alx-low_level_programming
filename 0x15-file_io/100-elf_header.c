@@ -44,7 +44,7 @@ void print_class(Elf64_Ehdr h)
  */
 void print_data(Elf64_Ehdr h)
 {
-	printf("  Data:                        ");
+	printf("  Data:				");
 	switch (h.e_ident[EI_DATA])
 	{
 		case ELFDATA2MSB:
@@ -53,7 +53,7 @@ void print_data(Elf64_Ehdr h)
 		case ELFDATA2LSB:
 			printf("2's complement, little endian");
 		break;
-		case ELFDATANONE
+		case ELFDATANONE:
 			printf("none");
 		break;
 	}
@@ -65,4 +65,43 @@ void print_data(Elf64_Ehdr h)
  * @h: the ELF header struct
  */
 
+void print_version(Elf64_Ehdr h)
+{
+	printf("  Version:			%d", h.e_ident[EI_VERSION]);
+	switch (h.e_ident[EI_VERSION])
+	{
+		case EV_CURRENT:
+			printf(" (current)");
+		break;
+		case EV_NONE:
+			printf("%s", "");
+		break;
+		break;
+	}
+	printf("\n");
+}
 
+/**
+ * print_osabi - prints ELF osabi
+ * @h: the ELF header struct
+ */
+void print_osabi(Elf64_Ehdr h)
+{
+	printf("  OS/ABI:			");
+	switch (h.e_ident[EI_OSABI])
+	{
+		case ELFOSABI_NONE:
+			printf("UNIX - System V");
+		break;
+		case ELFOSABI_HPUX:
+			printf("UNIX - HP-UX");
+		break;
+		case ELFOSABI_NETBSD
+			printf("UNIX - NetBSD");
+		break;
+		case ELFOSABI_LINUX:
+			printf("UNIX - Linux");
+		break;
+	}
+	printf("\n");
+}
