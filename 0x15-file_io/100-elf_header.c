@@ -92,16 +92,36 @@ void print_osabi(Elf64_Ehdr h)
 	{
 		case ELFOSABI_NONE:
 			printf("UNIX - System V");
-		break;
+			break;
 		case ELFOSABI_HPUX:
 			printf("UNIX - HP-UX");
-		break;
-		case ELFOSABI_NETBSD
+			break;
+		case ELFOSABI_NETBSD:
 			printf("UNIX - NetBSD");
-		break;
+			break;
 		case ELFOSABI_LINUX:
 			printf("UNIX - Linux");
-		break;
+			break;
+		case ELFOSABI_SOLARIS:
+			printf("UNIX - Solaris");
+			break;
+		case ELFOSABI_AIX:
+			printf("UNIX - AIX");
+			break;
+		case ELFOSABI_IRIX:
+			printf("UNIX - IRIX");
+			break;
+		case ELFOSABI_FREEBSD:
+			printf("UNIX - FreeBSD");
+			break;
+		case ELFOSABI_TRU64:
+			printf("UNIX - TRU64");
+			break;
+		default:
+			print_osabi_more(h);
+			break;
 	}
 	printf("\n");
 }
+
+
