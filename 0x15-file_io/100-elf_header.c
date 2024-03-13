@@ -11,7 +11,7 @@ void print_magic(Elf64_Ehdr h)
 {
 	int i;
 
-	printf(" Magic:   ");
+	printf("  Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
 		printf("%2.2x%s", h.e_ident[i], i == EI_NIDENT - 1 ? "\n" : " ");
 }
@@ -22,7 +22,7 @@ void print_magic(Elf64_Ehdr h)
  */
 void print_class(Elf64_Ehdr h)
 {
-	printf("  Class:			");
+	printf("  Class:                             ");
 	switch (h.e_ident[EI_CLASS])
 	{
 		case ELFCLASS64:
@@ -44,7 +44,7 @@ void print_class(Elf64_Ehdr h)
  */
 void print_data(Elf64_Ehdr h)
 {
-	printf("  Data:				");
+	printf("  Data:                              ");
 	switch (h.e_ident[EI_DATA])
 	{
 		case ELFDATA2MSB:
@@ -249,7 +249,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Can't open file: %s\n", av[1]), exit(98);
 	b = read(fd, &h, sizeof(h));
 	if (b < 1 || b != sizeof(h))
-		dprintf(STDERR_FILENO, "Can't read file: %s\n", av[1]), exit(98);
+		dprintf(STDERR_FILENO, "Can't read from file: %s\n", av[1]), exit(98);
 	if (h.e_ident[0] == 0x7f && h.e_ident[1] == 'E' && h.e_ident[2] == 'L'
 			&& h.e_ident[3] == 'F')
 	{
