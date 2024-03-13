@@ -67,7 +67,7 @@ void print_data(Elf64_Ehdr h)
 
 void print_version(Elf64_Ehdr h)
 {
-	printf("  Version:			%d", h.e_ident[EI_VERSION]);
+	printf("  Version:                           %d", h.e_ident[EI_VERSION]);
 	switch (h.e_ident[EI_VERSION])
 	{
 		case EV_CURRENT:
@@ -87,7 +87,7 @@ void print_version(Elf64_Ehdr h)
  */
 void print_osabi(Elf64_Ehdr h)
 {
-	printf("  OS/ABI:			");
+	printf("  OS/ABI:                            ");
 	switch (h.e_ident[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
@@ -156,7 +156,7 @@ void print_osabi_more(Elf64_Ehdr h)
  */
 void print_abiversion(Elf64_Ehdr h)
 {
-	printf("  ABI Version:			%d\n",
+	printf("  ABI Version:                       %d\n",
 			h.e_ident[EI_ABIVERSION]);
 }
 
@@ -169,7 +169,7 @@ void print_type(Elf64_Ehdr h)
 	char *p = (char *)&h.e_type;
 	int i = 0;
 
-	printf("  TYPE:				");
+	printf("  Type:                              ");
 	if (h.e_ident[EI_DATA] == ELFDATA2MSB)
 		i = 1;
 	switch (p[i])
@@ -205,7 +205,7 @@ void print_entry(Elf64_Ehdr h)
 	int i = 0, len = 0;
 	unsigned char *p = (unsigned char *)&h.e_entry;
 
-	printf("  Entry point address:			0x");
+	printf("  Entry point address:               0x");
 	if (h.e_ident[EI_DATA] != ELFDATA2MSB)
 	{
 		i = h.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
