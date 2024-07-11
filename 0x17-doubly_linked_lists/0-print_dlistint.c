@@ -1,4 +1,9 @@
+#ifndef LISTS_H
+#define LISTS_H
 
+
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * print_dlistint - prints double-linked list
  * @h: address of head node
