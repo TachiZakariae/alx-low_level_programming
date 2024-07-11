@@ -1,3 +1,4 @@
+#include "lists.h"
 
 /**
  * add_dnodeint_end - adds new node to of dlist

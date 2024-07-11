@@ -1,3 +1,4 @@
+#include "lists.h"
 
 /**
  * sum_dlistint - sums the values of a dlist

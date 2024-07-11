@@ -1,3 +1,4 @@
+#include "lists.h"
 
 /**
  * add_dnodeint - adds new head node to dlist
